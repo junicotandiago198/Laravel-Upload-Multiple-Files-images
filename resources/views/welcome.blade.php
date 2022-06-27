@@ -51,7 +51,7 @@
                             <td>{{ $i++; }}</td>
                             <td>{{ $product->title }}</td>
                             <td>${{ $product->price }}</td>
-                            <td>10</td>
+                            <td>{{ $product->images->count() }}</td>
                             <td>
                                 <a href="#" class="btn btn-outline-dark">View</a>
                             </td>

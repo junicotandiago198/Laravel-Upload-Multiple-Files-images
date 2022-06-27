@@ -33,4 +33,13 @@ class ProductController extends Controller
         }
         return back()->with('success','Added');
     }
+
+    public function images($id)
+    {
+        $product = Product::find($id);
+        
+        if(!$product) abort(404);
+        $images = $product->images;
+        return view('images',compact('product','images'));
+    }
 }

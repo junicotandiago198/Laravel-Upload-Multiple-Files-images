@@ -60,7 +60,7 @@
                             <td>${{ $product->price }}</td>
                             <td>{{ $product->images->count() }}</td>
                             <td>
-                                <a href="#" class="btn btn-outline-dark">View</a>
+                                <a href="{{ route('product.images',$product->id) }}" class="btn btn-outline-dark">View</a>
                             </td>
                         </tr>
                     @empty

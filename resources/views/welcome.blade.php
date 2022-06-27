@@ -1,9 +1,16 @@
 @extends('layout')
 @section('content')
     <div class="row justify-content-between">
+        @if (session('success'))
+            <div class="alert alert-dismissible alert-success">
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                <h4 class="alert-heading">Success!</h4>
+                <p class="mb-0">New Product was added successfully!</p>
+            </div>
+        @endif
         <div class="col-md-5">
             <h3>Add a Product</h3>
-            <form action="#" method="POST" enctype="multipart/form-data">
+            <form action="/add-product" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group mt-4">
                     <label for="title">Product Title:</label>
@@ -25,7 +32,7 @@
                 </div>
                 <div class="form-group">
                     <label for="files" class="form-label mt-4">Upload Product Images:</label>
-                    <input type="file" name="imagaes[]" id="" class="form-control" accept="images/*" multiple>
+                    <input type="file" name="images[]" id="" class="form-control" accept="images/*" multiple>
                 </div>
                 <div class="mt-4">
                     <button type="submit" class="btn btn-primary">Save Product</button>
